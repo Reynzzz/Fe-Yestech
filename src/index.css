@@ -1,0 +1,314 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom class tetapi tetap menggunakan class pada tailwind */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+.flex-between {
+  @apply flex items-center justify-between;
+}
+
+.container {
+  @apply m-auto w-[90%];
+}
+
+.menu-navbar {
+  @apply text-xl font-medium;
+}
+
+.menu-footer {
+  @apply font-normal;
+}
+/* Add these styles to your CSS file */
+.margin-transition {
+  transition: margin 0.3s ease-in-out;
+  -webkit-transition: margin 0.3s ease-in-out;
+  -moz-transition: margin 0.3s ease-in-out;
+  -ms-transition: margin 0.3s ease-in-out;
+  -o-transition: margin 0.3s ease-in-out;
+}
+.transform-active {
+  transform: translateX(30rem) scale(1.3) translateY(-20px);
+}
+
+.button-primary {
+  @apply transition-all cursor-pointer hover:bg-primary hover:text-white text-primary;
+}
+
+.button-secondary {
+  @apply text-white transition-all cursor-pointer hover:bg-white hover:text-black;
+}
+
+.list-about-us {
+  @apply w-[40%]   font-bold flex items-center;
+}
+.list-item-about-us {
+  @apply text-white rounded-full flex-center bg-primary;
+}
+
+.bg-blur-blue {
+  backdrop-filter: blur(50px);
+  background-color: rgba(0, 0, 255, 0.8); /* Adjust the blue color and opacity as needed */
+}
+
+.slick-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* hidden dot carousel-react-responsive */
+.carousel .control-dots {
+  display: none;
+}
+
+/* dot carousel slick home */
+/* dekstop start */
+.custom-dot {
+  margin-left: -240px !important;
+  margin-top: 20px !important;
+  width: 35px !important;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 5px;
+}
+
+.custom-dot::after {
+  position: absolute;
+  content: '';
+  background-color: white !important;
+  width: 8px !important;
+  height: 8px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.custom-dot.active {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+  background-color: #223dfe !important;
+  width: 35px !important;
+  height: 8px !important;
+}
+
+.custom-dot.active::after {
+  display: none; /* Hide the white dot for active state */
+  height: 8px !important;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important;
+}
+/* desktop end*/
+
+/* carousel-dots-about-us-history */
+.carousel-dots-about-us-history {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 0px;
+  position: absolute !important;
+  top: 405px !important;
+  left: 20% !important;
+  translate: -50% -50% !important;
+  z-index: 9999;
+  width: 200px;
+}
+.custom-dots-about-us-history {
+  margin-left: -50px !important;
+  margin-top: 14px !important;
+  width: 35px !important;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 5px;
+}
+
+.custom-dots-about-us-history::after {
+  position: absolute;
+  content: '';
+  background-color: white;
+  width: 7px !important;
+  height: 7px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.custom-dots-about-us-history.active {
+  border-radius: 30px !important;
+  -webkit-border-radius: 30px !important;
+  -moz-border-radius: 30px !important;
+  -ms-border-radius: 30px !important;
+  -o-border-radius: 30px !important;
+  background-color: #223dfe !important;
+  width: 25px !important;
+  height: 8px !important;
+  position: absolute;
+  left: -2px;
+}
+
+.custom-dots-about-us-history.active::after {
+  display: none; /* Hide the white dot for active state */
+  height: 8px !important;
+}
+
+/* style pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  list-style: none;
+  margin: 10px 0 50px 0;
+}
+
+.page-item {
+  margin: 0 0.5rem;
+  color: #222222;
+}
+
+.page-link {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.65rem;
+  background-color: #223dfe;
+  border: 2px solid #223dfe;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.page-link:hover {
+  background-color: #e9ecef;
+  border-color: #ddd;
+}
+
+.page-item.active .page-link {
+  border: 2px solid #223dfe;
+  background-color: white;
+  color: #222222;
+}
+
+.page-item.disabled .page-link {
+  background-color: #e2e8f0;
+  border: 2px solid #e2e8f0;
+  color: #6c757d;
+  cursor: default;
+}
+.page-item.disabled .page-link:hover {
+  background-color: #e2e8f0;
+}
+
+/* mobile start */
+@media (min-width: 320px) and (max-width: 767px) {
+  .custom-dot {
+    margin-left: -50px !important;
+    margin-top: 14px !important;
+    width: 35px !important;
+    height: 8px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    margin: 0 5px;
+  }
+
+  .custom-dot::after {
+    position: absolute;
+    content: '';
+    background-color: white !important;
+    width: 8px !important;
+    height: 8px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+
+  .custom-dot.active {
+    border-radius: 30px !important;
+    -webkit-border-radius: 30px !important;
+    -moz-border-radius: 30px !important;
+    -ms-border-radius: 30px !important;
+    -o-border-radius: 30px !important;
+    background-color: #223dfe !important;
+    width: 35px !important;
+    height: 8px !important;
+  }
+
+  .custom-dot.active::after {
+    display: none; /* Hide the white dot for active state */
+    height: 8px !important;
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  /* pagination */
+  .page-link {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.55rem;
+  }
+}
+.description-content ul {
+  list-style-type: disc; /* Bullet points untuk <ul> */
+  padding-left: 20px;    /* Jarak kiri untuk list */
+}
+
+.description-content ol {
+  list-style-type: decimal; /* Nomor untuk <ol> */
+  padding-left: 20px;       /* Jarak kiri untuk list */
+}
+
+.description-content li {
+  margin-bottom: 10px; /* Jarak antar item dalam list */
+}
+
