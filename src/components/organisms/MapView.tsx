@@ -35,12 +35,12 @@ const MapView: React.FC = () => {
   })
   // base location owner
   const locations = [
-    { name: 'Jabodetabek', top: { md: 63, xs: 61.5 }, left: { md: 27.5, xs: 31 } },
-    { name: 'Jogjakarta', top: { md: 71, xs: 71.5 }, left: { md: 33, xs: 41 } },
-    { name: 'Surabaya', top: { md: 67.5, xs: 66 }, left: { md: 38.5, xs: 56 } },
-    { name: 'Bali', top: { md: 72, xs: 70 }, left: { md: 44.5, xs: 69 } },
-    {name : 'Manado' , top : {md: 28,xs : 26}, left : {md : 64.5, xs : 100}},
-    {name : 'Samarinda' , top : {md: 38,xs : 39}, left : {md : 48, xs :75}}
+    { name: 'Jabodetabek', top: { md: 63, xs: 61 }, left: { md: 27.5, xs: 26.5 } },
+    { name: 'Jogjakarta', top: { md: 71, xs: 66 }, left: { md: 33, xs: 32 } },
+    { name: 'Surabaya', top: { md: 67.5, xs: 69 }, left: { md: 38.5, xs: 38 } },
+    { name: 'Bali', top: { md: 72, xs: 70 }, left: { md: 44.5, xs: 47 } },
+    {name : 'Manado' , top : {md: 28,xs : 26}, left : {md : 64.5, xs : 62}},
+    {name : 'Samarinda' , top : {md: 38,xs : 36.5}, left : {md : 48, xs :46.6}}
   ]
 
   useEffect(() => {
@@ -115,98 +115,82 @@ const MapView: React.FC = () => {
 
   return (
     <section className="h-min mt-10 pb-20 bg-[#10121D] overflow-hidden">
-      <div className="relative   md:w-[90%] mx-auto xs:w-full">
-        <h2 className="relative z-20 pt-20 xs:text-xl md:text-2xl font-bold text-center xs:text-white md:text-[#CCCCCC] flex flex-col md:mb-0 xs:mb-5">
-          Yes Tech Strategic Partners
-        </h2>
-        <p className="text-[#565E93] text-xs font-normal text-center md:hidden relative z-20 ">
-          * Tap on location to discover partner
-        </p>
-
-        {/* bg liner peta versi mobile */}
-        <img
-          src="/images/home/gradient.svg"
-          className="top-0 w-full h-[25%]  z-10 left-0 right-0 md:hidden absolute object-cover"
-          alt="image [peta]:"
-        />
-
-        <div className="relative h-full " style={mapBackgroundStyle}>
-          <img src="/images/home/peta.svg" className="object-cover w-full h-full md:block xs:hidden" alt="image" />
-
-          {/* bg peta versi mobile */}
-          <img
-            src="/images/home/peta-versi-mobile.svg"
-            className="relative z-0 object-cover w-full h-full -mt-[7.5rem] md:hidden xs:block"
-            alt="image [peta]:"
-          />
-
-          {/* tampilan web */}
-          {dataCategoryOwner.map((location) => (
-            <div
-              key={location.name}
-              className={`absolute xs:hidden md:flex flex-col items-center justify-center transform -translate-x-[50%] -translate-y-[50%] cursor-pointer
-                `}
-              style={{
-                top: `${location.top.md}%`,
-                left: `${location.left.md}%`
-              }}
-              onMouseEnter={() => handleMouseEnter(location.name)}
-              onMouseLeave={() => handleMouseLeave(location.name)}
-              onClick={() => setModal(location.name)}
-            >
-              <h3 className="font-semibold text-white xs:text-xs md:text-sm">{location.name}</h3>
-
-              <img src="/images/home/location.svg" className="h-auto xs:w-10 md:w-14" alt="Icon Location" />
-
-              <LocationInfo
-                currentData={currentData}
-                name={location.name}
-                isHovered={hoveredLocation === location.name}
-                handleMouseEnter={handleMouseEnter}
-              />
-            </div>
-          ))}
-
-          {/* Tampilan Mobil */}
-          {dataCategoryOwner.map((location) => (
-            <div
-              key={location.name}
-              className={`absolute z-50 md:hidden flex flex-col items-center justify-center transform -translate-x-[50%] -translate-y-[50%] cursor-pointer
-                `}
-              style={{
-                top: `${location.top.xs}%`,
-                left: `${location.left.xs}%`
-              }}
-              onClick={() => selectPartner(location.name)}
-            >
-              {location.name === 'Jogjakarta' ? (
-                <h3 className="font-semibold text-white xs:text-xs md:text-sm md:block xs:hidden">{location.name}</h3>
-              ) : (
-                <h3 className="font-semibold text-white xs:text-xs md:text-sm">{location.name}</h3>
-              )}
-
-              {location.name == city ? (
-                <div className="relative xs:w-10 md:w-14">
-                  <div className="absolute inset-0 bg-primary blur-xl"></div>
-                  <img src="/images/home/location.svg" className="relative w-full" alt="Icon Location" />
-                </div>
-              ) : (
-                <img src="/images/home/location.svg" className="h-auto xs:w-10 md:w-14" alt="Icon Location" />
-              )}
-              {location.name === 'Jogjakarta' ? (
-                <h3 className="-mt-2 font-semibold text-white xs:text-xs md:text-sm md:hidden">{location.name}</h3>
-              ) : null}
-
-              <LocationInfo
-                currentData={currentData}
-                name={location.name}
-                isHovered={hoveredLocation === location.name}
-                handleMouseEnter={handleMouseEnter}
-              />
-            </div>
-          ))}
-        </div>
+     <div className="relative md:w-[90%] mx-auto xs:w-full">
+      <div className='flex flex-col md:mb-0 xs:mb-10 xs:pb-10 mb-0'>
+  <h2 className="relative z-20 pt-10 xs:text-xl md:text-2xl font-bold text-center xs:text-white md:text-[#CCCCCC] ">
+    Yes Tech Strategic Partners
+  </h2>
+  <p className="text-[#565E93] text-xs font-normal text-center md:hidden z-20">
+    * Tap on location to discover partner
+  </p>
       </div>
+
+  {/* bg liner peta versi mobile */}
+  <img
+    src="/images/home/gradient.svg"
+    className="top-0 w-full h-[25%] z-10 left-0 right-0 md:hidden absolute object-cover"
+    alt="image [peta]:"
+  />
+
+  <div className="relative h-full mt-8 xs:mt-16" style={mapBackgroundStyle}>
+    <img src="/images/home/peta.svg" className="object-cover w-full h-full md:block xs:hidden" alt="image" />
+
+    {/* bg peta versi mobile */}
+    <img
+      src="/images/home/peta.svg"
+      className="relative z-0 object-cover w-full h-full -mt-[6.5rem] md:hidden xs:block"
+      alt="image [peta]:"
+    />
+
+    {/* tampilan web */}
+    {dataCategoryOwner.map((location) => (
+      <div
+        key={location.name}
+        className={`absolute xs:hidden md:flex flex-col items-center justify-center transform -translate-x-[50%] -translate-y-[50%] cursor-pointer`}
+        style={{
+          top: `${location.top.md}%`,
+          left: `${location.left.md}%`,
+        }}
+        onMouseEnter={() => handleMouseEnter(location.name)}
+        onMouseLeave={() => handleMouseLeave(location.name)}
+        onClick={() => setModal(location.name)}
+      >
+        <h3 className="font-semibold text-white xs:text-xs md:text-sm">{location.name}</h3>
+        <img src="/images/home/location.svg" className="h-auto xs:w-10 md:w-14" alt="Icon Location" />
+        <LocationInfo
+          currentData={currentData}
+          name={location.name}
+          isHovered={hoveredLocation === location.name}
+          handleMouseEnter={handleMouseEnter}
+        />
+      </div>
+    ))}
+
+    {/* Tampilan Mobil */}
+    {dataCategoryOwner.map((location) => (
+      <div
+        key={location.name}
+        className={`absolute z-50 md:hidden flex flex-col items-center justify-center transform -translate-x-[50%] -translate-y-[50%] cursor-pointer`}
+        style={{
+          top: `${location.top.xs}%`,
+          left: `${location.left.xs}%`,
+        }}
+        onClick={() => selectPartner(location.name)}
+      >
+        <h3 className="font-semibold text-white xs:text-[9px] md:text-sm">{location.name}</h3>
+        {location.name == city ? (
+          <div className="relative xs:w-8 md:w-14"> {/* Mengurangi ukuran di mobile */}
+            <div className="absolute inset-0 bg-primary blur-xl"></div>
+            <img src="/images/home/location.svg" className="relative w-full" alt="Icon Location" />
+          </div>
+        ) : (
+          <img src="/images/home/location.svg" className="h-auto xs:w-8 md:w-14" alt="Icon Location" /> /* Ukuran lebih kecil di mobile */
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Modal Versi Web */}
       {isModalOpenVersiWeb ? (
