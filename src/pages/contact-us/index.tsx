@@ -34,7 +34,7 @@ const ContactUs = () => {
     const message = `Name  : ${data.name} 
 Phone : ${data.phone} 
 Email  : ${data.email}
-Message : 'Default message`
+Message : 'Halo, Saya ingin mendapatkan informasi lebih lanjut mengenai produk LED Screen Yes Tech`
     window.open(`https://api.whatsapp.com/send?phone=6281288162075&text=${encodeURIComponent(message)}`, '_blank')
     // window.open(`https://api.whatsapp.com/send?phone=6282312852620&text=${encodeURIComponent(message)}`, '_blank')
   }

@@ -113,7 +113,7 @@ const Banner = () => {
               {data?.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col items-center justify-start w-full h-full gap-14 md:gap-0 md:justify-between md:flex-row"
+                  className="flex flex-col items-center justify-start w-full h-full gap-14  md:gap-0 md:justify-between md:flex-row"
                 >
                   <div className="flex w-[100%] md:w-[60%]  items-center justify-center md:justify-start mt-0  md:mt-44 ">
                     <div className="flex flex-col gap-0 pt-20 md:gap-2 xs:items-center md:items-start md:pt-0">

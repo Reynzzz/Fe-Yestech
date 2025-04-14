@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Banner from './Banner'
 import CaseList from './CaseList'
 import ProductBanner from './ProductBanner'
+import VirtualTour from './virtual_tour'
+
 const Home: React.FC = () => {
   return (
     <>
@@ -78,6 +80,7 @@ const Home: React.FC = () => {
       </section>
       <CaseList />
 
+      <VirtualTour/>
       <MapView />
     </>
   )

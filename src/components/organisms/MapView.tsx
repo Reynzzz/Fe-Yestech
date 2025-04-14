@@ -114,7 +114,7 @@ const MapView: React.FC = () => {
   }
 
   return (
-    <section className="h-min mt-10 pb-20 bg-[#10121D] overflow-hidden">
+    <section className="h-min  pb-20 bg-[#10121D] overflow-hidden">
      <div className="relative md:w-[90%] mx-auto xs:w-full">
       <div className='flex flex-col md:mb-0 xs:mb-10 xs:pb-10 mb-0'>
   <h2 className="relative z-20 pt-10 xs:text-xl md:text-2xl font-bold text-center xs:text-white md:text-[#CCCCCC] ">
