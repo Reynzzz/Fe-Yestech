@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FaPlus } from 'react-icons/fa'
+
 import { useNavigate, useParams } from 'react-router-dom'
 import { IDetailNews } from '../../types/IDetailNews'
 import NEWS from '../../services/news'
