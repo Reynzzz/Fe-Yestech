@@ -5,7 +5,7 @@ import { IDetailNews } from '../../types/IDetailNews'
 import NEWS from '../../services/news'
 import Skeleton from '../../components/atoms/Skeleton'
 import { BASE_API } from '../../config/env'
-
+import DOMPurify from 'dompurify';
 const NewsRead = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -68,20 +68,14 @@ const NewsRead = () => {
                     <div className="flex-center">
                       <img src="/icons/date.svg" alt="date icon" className="w-full" />
                     </div>
-                    <h3>July 14 , 2022</h3>
+                    <h3>{new Date(data.createdAt).toLocaleDateString('id-ID', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric'
+})}</h3>
+
                   </li>
-                  <li className="gap-3 flex-center">
-                    <div className="flex-center">
-                      <img src="/icons/comment.svg" alt="comment icon" className="w-full" />
-                    </div>
-                    <h3>comments : 35</h3>
-                  </li>
-                  <li className="gap-2 flex-center">
-                    <div className="flex-center">
-                      <img src="/icons/category.svg" alt="category icon" className="w-full" />
-                    </div>
-                    <h3>Categgory Sport</h3>
-                  </li>
+             
                 </ul>
               </div>
             </div>
@@ -92,10 +86,11 @@ const NewsRead = () => {
                 return (
                   <div key={index} className="flex flex-col w-full gap-5 md:gap-8">
                     <div className="flex flex-col w-full gap-3 px-0 md:gap-5 lg:px-8 ">
-                      <article
-                        className="text-sm font-semibold md:text-xl md:font-medium"
-                        dangerouslySetInnerHTML={{ __html: detail?.text ?? '' }}
-                      />
+                    <article
+  className="prose prose-sm md:prose-lg max-w-none font-normal"
+  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(detail?.text ?? '') }}
+/>
+
                     </div>
                     <div className="flex-center w-full md:w-[80%] mx-auto">
                       <img src="/images/news-read/news-list.png" className="w-full h-auto rounded-md overflow-hidde" />
@@ -107,58 +102,9 @@ const NewsRead = () => {
 
           {/* sidebar */}
           <div className="lg:w-[30%] hidden w-full md:flex flex-col gap-5">
-            <ul className="w=full flex justify-between items-center">
-              <li className="opacity-70">
-                <button className="bg-bgSecondary flex-center gap-3 py-2 px-4 rounded-md text-[#3E3232] font-medium text-xs">
-                  <div className="flex-center">
-                    <img src="/icons/share.svg" alt="share icon" className="w-full" />
-                  </div>
-                  Share
-                </button>
-              </li>
-              <li className="opacity-70">
-                <button className="bg-bgSecondary flex-center gap-3 py-2 px-4 rounded-md text-[#3E3232] font-medium text-xs">
-                  <div className="flex-center">
-                    <img src="/icons/marking.svg" alt="marking icon" className="w-full" />
-                  </div>
-                  Marking
-                </button>
-              </li>
-              <li className="opacity-70">
-                <button className="bg-bgSecondary flex-center gap-3 py-2 px-4 rounded-md text-[#3E3232] font-medium text-xs">
-                  <div className="flex-center">
-                    <img src="/icons/comment.svg" alt="comment icon" className="w-full" />
-                  </div>
-                  Comment
-                </button>
-              </li>
-            </ul>
-            <div className="flex justify-between gap-2 p-5 bg-bgSecondary rounded-[12px]">
-              <div className="flex justify-start gap-3">
-                <img src="/images/news-read/avatar.png" className="rounded-[12px] w-[87px] h-auto" />
-                <div className="flex flex-col gap-2">
-                  <h3 className="w-full text-[16px] pt-3 font-semibold text-[#3E3232]">Behzad Pashaei</h3>
-                  <button className="bg-[#F81539] w-[90%] bg-opacity-75 text-white rounded-[12px] py-2 px-2 flex-center gap-2">
-                    <FaPlus /> Follow
-                  </button>
-                </div>
-              </div>
-              <span className="pt-4 text-xs font-normal bg-bgSecondary opacity-70">27 post</span>
-            </div>
-            <ul className="p-5 bg-bgSecondary rounded-[12px]">
-              <div className="flex items-center justify-start gap-2">
-                <span className="bg-[#F81539] h-2 w-[4px] rounded-full"></span>
-                <h3 className="text-xl font-semibold">Tags</h3>
-              </div>
-              <div className="flex text-[#3E3232] opacity-70 text-xs flex-wrap gap-2 font-medium mt-3">
-                <li>Montenegro</li>
-                <li>Visit Croatia</li>
-                <li>Luxury Travel</li>
-                <li>Travel Log</li>
-                <li>Paradise Island</li>
-                <li>Travel Info</li>
-              </div>
-            </ul>
+          
+         
+          
 
             <ul className="p-5 bg-bgSecondary rounded-[12px]">
               <div className="flex items-center justify-start gap-2">
@@ -204,14 +150,7 @@ const NewsRead = () => {
                 </li>
               </div>
             </ul>
-            <ul className="flex flex-col gap-5 mt-5">
-              <li className="w-full rounded-[12px] overflow-hidden">
-                <img src="/images/news-read/Advertising.png" className="w-full h-auto" />
-              </li>
-              <li className="w-full rounded-[12px] overflow-hidden">
-                <img src="/images/news-read/top-news.png" className="w-full h-auto" />
-              </li>
-            </ul>
+          
           </div>
         </div>
       </section>

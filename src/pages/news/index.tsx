@@ -6,7 +6,7 @@ import { BASE_API } from '../../config/env'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Skeleton from '../../components/atoms/Skeleton'
 import { INewsHome } from '../../types/INewsHome'
-
+import DOMPurify from 'dompurify';
 const News = () => {
   const [data, setdata] = useState<INewsHome[]>([])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -159,13 +159,13 @@ const News = () => {
                       />
 
                       <div className="flex flex-col w-full gap-3 mt-0 md:gap-5 md:mt-3">
-                        <h4 className="text-sm font-bold leading-5 md:h-14 line-clamp-2 md:text-xl md:leading-6 md:line-clamp-2">
+                        <h4 className="text-sm font-bold leading-5 md:h-14 line-clamp-2 md:text-xl md:leading-7 md:line-clamp-2">
                           {item.name}
                         </h4>
                         <ul className="text-xs -mt-0 md:-mt-5 flex gap-3 font-normal text-[#949494]">
                           {/* <li>1 Hour Ago</li>
                           <li>1 Hour Ago</li> */}
-                          <li className="line-clamp-3" dangerouslySetInnerHTML={{ __html: itemTextContent }}></li>
+                          <li className="line-clamp-3" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(itemTextContent) }}></li>
                         </ul>
                       </div>
                     </Link>

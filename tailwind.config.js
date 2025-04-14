@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        xs: '320px' // Tambahkan aturan media query untuk breakpoint 2xl
+        xs: '320px'
       },
       colors: {
         primary: '#223DFE',
@@ -13,5 +13,5 @@ export default {
       }
     }
   },
-  plugins: []
+  plugins: [require('@tailwindcss/typography')] // ✅ Tambahkan ini
 }
