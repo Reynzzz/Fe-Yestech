@@ -69,10 +69,7 @@ const News = () => {
           </h3>
 
           <h2 className="text-xl font-bold text-secondary md:hidden">{dataBanner?.name}</h2>
-          <ul className="flex items-center justify-start gap-2 mt-2 mb-4 text-xs font-normal text-secondary md:hidden">
-            <li>2024.06.05</li>
-            <li>CNN Indonesia</li>
-          </ul>
+        
 
           {/* versi dekstop */}
           <div className="w-full flex-center">

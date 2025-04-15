@@ -92,9 +92,7 @@ const NewsRead = () => {
 />
 
                     </div>
-                    <div className="flex-center w-full md:w-[80%] mx-auto">
-                      <img src="/images/news-read/news-list.png" className="w-full h-auto rounded-md overflow-hidde" />
-                    </div>
+                   
                   </div>
                 )
               })}
