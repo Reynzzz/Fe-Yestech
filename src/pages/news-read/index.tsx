@@ -5,7 +5,7 @@ import { IDetailNews } from '../../types/IDetailNews'
 import NEWS from '../../services/news'
 import Skeleton from '../../components/atoms/Skeleton'
 import { BASE_API } from '../../config/env'
-import DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify'
 const NewsRead = () => {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -68,14 +68,14 @@ const NewsRead = () => {
                     <div className="flex-center">
                       <img src="/icons/date.svg" alt="date icon" className="w-full" />
                     </div>
-                    <h3>{new Date(data.createdAt).toLocaleDateString('id-ID', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric'
-})}</h3>
-
+                    <h3>
+                      {new Date(data.createdAt).toLocaleDateString('id-ID', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                      })}
+                    </h3>
                   </li>
-             
                 </ul>
               </div>
             </div>
@@ -86,13 +86,11 @@ const NewsRead = () => {
                 return (
                   <div key={index} className="flex flex-col w-full gap-5 md:gap-8">
                     <div className="flex flex-col w-full gap-3 px-0 md:gap-5 lg:px-8 ">
-                    <article
-  className="prose prose-sm md:prose-lg max-w-none font-normal"
-  dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(detail?.text ?? '') }}
-/>
-
+                      <article
+                        className="prose prose-sm md:prose-lg max-w-none font-normal"
+                        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(detail?.text ?? '') }}
+                      />
                     </div>
-                   
                   </div>
                 )
               })}
@@ -100,10 +98,6 @@ const NewsRead = () => {
 
           {/* sidebar */}
           <div className="lg:w-[30%] hidden w-full md:flex flex-col gap-5">
-          
-         
-          
-
             <ul className="p-5 bg-bgSecondary rounded-[12px]">
               <div className="flex items-center justify-start gap-2">
                 <span className="bg-[#F81539] h-2 w-[4px] rounded-full"></span>
@@ -148,7 +142,6 @@ const NewsRead = () => {
                 </li>
               </div>
             </ul>
-          
           </div>
         </div>
       </section>

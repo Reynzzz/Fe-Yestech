@@ -167,13 +167,13 @@ const Product = () => {
                 {category?.name}
               </li>
             ))}
-            <li className='cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300'>
+            <li className="cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300">
               DOOH
             </li>
-            <li className='cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300'>
+            <li className="cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300">
               Commercial
             </li>
-            <li className='cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300'>
+            <li className="cursor-not-allowed flex-shrink-0 p-3 px-4 text-center rounded-none md:rounded-md md:w-full text-slate-300">
               Fine Pixel Pitch
             </li>
           </ul>
@@ -250,7 +250,7 @@ const Product = () => {
                       {product?.name}
                     </h3>
                     <div className="gap-2 md:mt-3 mt-2 text-[10px] font-semibold md:text-sm flex flex-col">
-                      <p className="line-clamp-1" dangerouslySetInnerHTML={{__html : product?.detailsHome}}/>
+                      <p className="line-clamp-1" dangerouslySetInnerHTML={{ __html: product?.detailsHome }} />
                       <p className="line-clamp-1">{product?.categoryProduct?.name}</p>
                       <p className="line-clamp-1">{product?.Type?.name}</p>
                     </div>

@@ -82,38 +82,38 @@ const LocationInfo: React.FC<ILocations> = ({ currentData, name, isHovered, hand
         </div>
       )
       break
-      case 'Manado':
-        infoContent = (
-          <div onMouseEnter={() => handleMouseEnter(name)} className="absolute -left-[1.5rem]  top-[2rem] z-30 mt-2 p-10">
-            <div className=" bg-white rounded-b-[40px] overflow-auto w-[353px] p-2 h-min border-2 border-[#CCCCCC] rounded-tr-[40px]">
-              <h3 className="text-lg font-semibold text-center text-secondary">{name}</h3>
-              <ul className="w-full flex-center">
-                {currentData?.map((item, index) => (
-                  <li key={index} className=" w-[109px]  rounded-2xl h-auto flex-center">
-                    <img src={`${BASE_API}/${item?.image}`} alt={item?.name} />
-                  </li>
-                ))}
-              </ul>
-            </div>
+    case 'Manado':
+      infoContent = (
+        <div onMouseEnter={() => handleMouseEnter(name)} className="absolute -left-[1.5rem]  top-[2rem] z-30 mt-2 p-10">
+          <div className=" bg-white rounded-b-[40px] overflow-auto w-[353px] p-2 h-min border-2 border-[#CCCCCC] rounded-tr-[40px]">
+            <h3 className="text-lg font-semibold text-center text-secondary">{name}</h3>
+            <ul className="w-full flex-center">
+              {currentData?.map((item, index) => (
+                <li key={index} className=" w-[109px]  rounded-2xl h-auto flex-center">
+                  <img src={`${BASE_API}/${item?.image}`} alt={item?.name} />
+                </li>
+              ))}
+            </ul>
           </div>
-        )
-        break
-        case 'Samarinda':
-          infoContent = (
-            <div onMouseEnter={() => handleMouseEnter(name)} className="absolute -left-[1.5rem]  top-[2rem] z-30 mt-2 p-10">
-              <div className=" bg-white rounded-b-[40px] overflow-auto w-[353px] p-2 h-min border-2 border-[#CCCCCC] rounded-tr-[40px]">
-                <h3 className="text-lg font-semibold text-center text-secondary">{name}</h3>
-                <ul className="w-full flex-center">
-                  {currentData?.map((item, index) => (
-                    <li key={index} className=" w-[109px]  rounded-2xl h-auto flex-center">
-                      <img src={`${BASE_API}/${item?.image}`} alt={item?.name} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )
-          break
+        </div>
+      )
+      break
+    case 'Samarinda':
+      infoContent = (
+        <div onMouseEnter={() => handleMouseEnter(name)} className="absolute -left-[1.5rem]  top-[2rem] z-30 mt-2 p-10">
+          <div className=" bg-white rounded-b-[40px] overflow-auto w-[353px] p-2 h-min border-2 border-[#CCCCCC] rounded-tr-[40px]">
+            <h3 className="text-lg font-semibold text-center text-secondary">{name}</h3>
+            <ul className="w-full flex-center">
+              {currentData?.map((item, index) => (
+                <li key={index} className=" w-[109px]  rounded-2xl h-auto flex-center">
+                  <img src={`${BASE_API}/${item?.image}`} alt={item?.name} />
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+      break
     default:
       infoContent = (
         <div className="absolute z-30 p-2 mt-2 text-xs text-black bg-white rounded shadow-lg top-full">

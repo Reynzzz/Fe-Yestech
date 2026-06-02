@@ -6,7 +6,7 @@ import { BASE_API } from '../../config/env'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Skeleton from '../../components/atoms/Skeleton'
 import { INewsHome } from '../../types/INewsHome'
-import DOMPurify from 'dompurify';
+import DOMPurify from 'dompurify'
 const News = () => {
   const [data, setdata] = useState<INewsHome[]>([])
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -69,7 +69,6 @@ const News = () => {
           </h3>
 
           <h2 className="text-xl font-bold text-secondary md:hidden">{dataBanner?.name}</h2>
-        
 
           {/* versi dekstop */}
           <div className="w-full flex-center">
@@ -162,7 +161,10 @@ const News = () => {
                         <ul className="text-xs -mt-0 md:-mt-5 flex gap-3 font-normal text-[#949494]">
                           {/* <li>1 Hour Ago</li>
                           <li>1 Hour Ago</li> */}
-                          <li className="line-clamp-3" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(itemTextContent) }}></li>
+                          <li
+                            className="line-clamp-3"
+                            dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(itemTextContent) }}
+                          ></li>
                         </ul>
                       </div>
                     </Link>

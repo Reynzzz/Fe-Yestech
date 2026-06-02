@@ -55,7 +55,7 @@ const RelatedProduct: React.FC<IRelatedProduct> = ({ paramsProduct }) => {
               <div className="px-2 md:px-5">
                 <h3 className="text-xl font-bold text-black md:text-2xl ">{item?.name}</h3>
                 <div className="gap-2 mt-3 text-[10px] font-semibold md:text-sm flex-flex-col">
-                  <p className="line-clamp-1" dangerouslySetInnerHTML={{__html : item?.detailsHome}}/>
+                  <p className="line-clamp-1" dangerouslySetInnerHTML={{ __html: item?.detailsHome }} />
                   <p className="line-clamp-1">{item?.categoryProduct?.name}</p>
                   <p className="line-clamp-1">{item?.Type?.name}</p>
                 </div>

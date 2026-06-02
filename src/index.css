@@ -300,15 +300,40 @@ body {
 }
 .description-content ul {
   list-style-type: disc; /* Bullet points untuk <ul> */
-  padding-left: 20px;    /* Jarak kiri untuk list */
+  padding-left: 20px; /* Jarak kiri untuk list */
 }
 
 .description-content ol {
   list-style-type: decimal; /* Nomor untuk <ol> */
-  padding-left: 20px;       /* Jarak kiri untuk list */
+  padding-left: 20px; /* Jarak kiri untuk list */
 }
 
 .description-content li {
   margin-bottom: 10px; /* Jarak antar item dalam list */
 }
 
+@keyframes drawLineSmooth {
+  0% {
+    stroke-dashoffset: 120;
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes dashMove {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -16;
+  }
+}
