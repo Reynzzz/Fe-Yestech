@@ -5,6 +5,7 @@ import * as ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { lazy } from 'react'
 import './index.css'
+import PageTransition from './components/partials/PageTransition'
 import MainLayout from './container/MainLayout'
 import Skeleton from './components/atoms/Skeleton'
 
@@ -23,7 +24,9 @@ const app = createBrowserRouter([
     path: '/',
     element: (
       <MainLayout>
-        <Home />
+        <PageTransition>
+          <Home />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -31,7 +34,9 @@ const app = createBrowserRouter([
     path: '/products',
     element: (
       <MainLayout>
-        <Products />
+        <PageTransition>
+          <Products />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -39,7 +44,9 @@ const app = createBrowserRouter([
     path: '/detail-product/:id',
     element: (
       <MainLayout>
-        <DetailProduct />
+        <PageTransition>
+          <DetailProduct />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -47,7 +54,9 @@ const app = createBrowserRouter([
     path: '/news',
     element: (
       <MainLayout>
-        <News />
+        <PageTransition>
+          <News />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -55,7 +64,9 @@ const app = createBrowserRouter([
     path: '/read-news/:id',
     element: (
       <MainLayout>
-        <NewsRead />
+        <PageTransition>
+          <NewsRead />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -63,7 +74,9 @@ const app = createBrowserRouter([
     path: '/contact-us',
     element: (
       <MainLayout>
-        <ContactUs />
+        <PageTransition>
+          <ContactUs />
+        </PageTransition>
       </MainLayout>
     )
   },
@@ -71,7 +84,9 @@ const app = createBrowserRouter([
     path: '/about-us',
     element: (
       <MainLayout>
-        <AboutUs />
+        <PageTransition>
+          <AboutUs />
+        </PageTransition>
       </MainLayout>
     )
   }
